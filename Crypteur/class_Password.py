@@ -1,7 +1,7 @@
 import string
 CARACTERE_min = list(string.ascii_lowercase)
 CARACTERE_maj = list(string.ascii_uppercase)
-CARACTERE_spec = ["&", "é", '"', "'", "(", "-", "è", "_", "ç", "à", ")", "=", "%"]
+CARACTERE_spec = ["&", "é", '"', "'", "(", "-", "è", "_", "ç", "à", ")", "=", "%", "!", "@", "?", "/", "$", "€", "#", "+", " "]
 NOMBRES = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 general = (CARACTERE_maj + CARACTERE_min + NOMBRES + CARACTERE_spec)
 
@@ -54,4 +54,7 @@ class Password:
         for i in(final):
             password += i 
         return password
+
+
+    
 
