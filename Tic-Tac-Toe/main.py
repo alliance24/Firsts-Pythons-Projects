@@ -20,10 +20,14 @@ def affiche(g):
 
 def explications():
     print("""
-
+    case1 | case2 | case3
+    ------+-------+-------
+    case4 | case5 | case6
+    ------+-------+-------
+    case7 | case8 | case9
+    
+    Indiquez uniquement le numéro de la case
     """)
-
-
 
 def get_x(coordonnees): 
     
