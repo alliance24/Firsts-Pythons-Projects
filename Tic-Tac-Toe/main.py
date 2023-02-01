@@ -3,7 +3,6 @@ from random import randint
 def grille_vide():
     return [[0 for x in range(3)] for y in range(3)]
 
-
 def affiche(g):
     print() # Permet de sauter une ligne (+ propre visuellement parlant)
     # On remplace les valeurs par qqch de plus graphique
@@ -39,7 +38,6 @@ def get_x(coordonnees):
         x = 2
     
     return x
-
 
 def get_y(coordonnees):
     
