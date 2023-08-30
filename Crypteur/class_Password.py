@@ -5,6 +5,21 @@ CARACTERE_spec = ["&", "é", '"', "'", "(", "-", "è", "_", "ç", "à", ")", "="
 NOMBRES = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 general = (CARACTERE_maj + CARACTERE_min + NOMBRES + CARACTERE_spec)
 
+def shuffle(general):
+        new_gen = ["0"]*(len(general))
+        for i in range(len(general)):
+            e = general[i]
+            i = i * 23
+            if i > len(general):
+                        while i > len(general):
+                            i = i - len(general)
+            if i < 0:
+                while i < 0:
+                    i = len(general) - (i*(-1))
+            new_gen[i] = e
+        return new_gen
+
+
 class Password:
 
     def __init__(self, password, key1, key2, key3):
@@ -13,6 +28,7 @@ class Password:
         self.key2 = key2
         self.key3 = key3
 
+
     def crypt(self, password, key1, key2, key3):
         decomp_mdp = []
         for i in password:
@@ -20,13 +36,15 @@ class Password:
 
         final = []
         for l in (decomp_mdp):
-            for i in range(len(general)):
+            for i in range(len(shuffle(general))):
                 if general[i] == l:
                     i = ((i-key1)+key2)-key3
                     if i > len(general):
-                        i = i -1 - len(general)
+                        while i > len(general):
+                            i = i - len(general)
                     if i < 0:
-                        i = len(general) - (i*(-1))
+                        while i < 0:
+                            i = len(general) - (i*(-1))
                     final.append(general[i])
 
         password = ""
@@ -41,13 +59,15 @@ class Password:
         
         final = []
         for l in (decomp_mdp):
-            for i in range(len(general)):
+            for i in range(len(shuffle(general))):
                 if general[i] == l:
                     i = ((i+key3)-key2)+key1
                     if i > len(general):
-                        i = i - len(general)
+                        while i > len(general):
+                            i = i - len(general)
                     if i < 0:
-                        i = len(general) - (i*(-1))
+                        while i < 0:
+                            i = len(general) - (i*(-1))
                     final.append(general[i])
         
         password = ""
