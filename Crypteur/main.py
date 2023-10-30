@@ -5,6 +5,8 @@ from class_Password import Password
 while True:
     print("Que souhaitez-vous faire ? ")
     ask = int(input("Tapez 1 pour crypter et 2 pour décrypter...\n"))
+    if ask == 3:
+        exit()
     mdp = str(input("Entrez votre mot de passe...\n"))
     os.system("cls")
     key = int(input("Entrez votre clé de cryptage (mémorisez la bien) \n"))
